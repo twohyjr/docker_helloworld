@@ -1,0 +1,10 @@
+sudo: required
+language: javascript
+services: 
+    - docker
+
+before_install:
+    - docker build -t twohyjr/docker-helloworld -f Dockerfile.dev
+
+script: 
+    - docker run -e CI=true twohyjr/docker-helloworld npm run test
