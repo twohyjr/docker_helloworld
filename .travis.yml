@@ -6,9 +6,6 @@ services:
 before_install:
     - docker build -t twohyjr/docker-helloworld .
 
-script: 
-    - docker run -e CI=true -d twohyjr/docker-helloworld 
-
 deploy:
     provider: elasticbeanstalk
     region: "us-east-1"
