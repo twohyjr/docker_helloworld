@@ -7,4 +7,4 @@ before_install:
     - docker build -t twohyjr/docker-helloworld .
 
 script: 
-    - docker run -e CI=true twohyjr/docker-helloworld -d
+    - docker run -e CI=true -d twohyjr/docker-helloworld 
