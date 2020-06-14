@@ -5,6 +5,10 @@ services:
 
 before_install:
     - docker build -t twohyjr/docker-helloworld .
+    #Log into the docker cli
+    - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --pasword-stdin
+    #Push images to docker hub
+    - docker push twohyjr/docker-helloworld 
 
 # deploy:
 #     provider: elasticbeanstalk
@@ -17,9 +21,4 @@ before_install:
 #         branch: master #when we push to master DEPLOY!
 #     access_key_id: $AWS_ACCESS_KEY
 #     secret_access_key: $AWS_SECRET_KEY
-
-after_success:
-    #Log into the docker cli
-    - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --pasword-stdin
-    #Push images to docker hub
-    - docker push twohyjr/docker-helloworld 
+    
