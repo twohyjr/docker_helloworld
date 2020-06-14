@@ -6,7 +6,7 @@ services:
 before_install:
     - docker build -t twohyjr/docker-helloworld .
     #Log into the docker cli
-    - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --pasword-stdin
+    - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
     #Push images to docker hub
     - docker push twohyjr/docker-helloworld 
 
