@@ -8,7 +8,7 @@ before_install:
     #Log into the docker cli
     - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
     #Push images to docker hub
-    - docker push twohyjr/docker-helloworld 
+    - docker push twohyjr/docker-helloworld  
 
 # deploy:
 #     provider: elasticbeanstalk
