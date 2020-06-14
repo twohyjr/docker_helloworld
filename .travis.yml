@@ -22,4 +22,4 @@ after_success:
     #Log into the docker cli
     - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --pasword-stdin
     #Push images to docker hub
-    - docker push twohyjr/helloworld
+    - docker push twohyjr/docker-helloworld
