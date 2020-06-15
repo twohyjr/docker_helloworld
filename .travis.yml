@@ -4,7 +4,7 @@ services:
 - docker
 env:
   global:
-  - DOCKER_REPO=twohyjr/helloworld
+  - DOCKER_REPO=926110576269.dkr.ecr.us-east-1.amazonaws.com/helloworld
   - EB_REGION="us-east-1"
 before_install:
   - pyenv global 3.7.1
