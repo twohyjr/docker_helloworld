@@ -4,21 +4,5 @@ services:
     - docker
 
 before_install:
-    - docker build -t twohyjr/docker-helloworld .
-    #Log into the docker cli
-    - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin docker.io
-    #Push images to docker hub
-    - docker push twohyjr/docker-helloworld  
-
-# deploy:
-#     provider: elasticbeanstalk
-#     region: "us-east-1"
-#     app: docker-helloworld
-#     env: "DockerHelloworld-env"
-#     bucket_name: "elasticbeanstalk-us-east-1-926110576269"
-#     bucker_path: "docker-helloworld" #the app name
-#     on:
-#         branch: master #when we push to master DEPLOY!
-#     access_key_id: $AWS_ACCESS_KEY
-#     secret_access_key: $AWS_SECRET_KEY
-    
+    - docker build -t 926110576269.dkr.ecr.us-east-1.amazonaws.com/helloworld:1.1 .
+    - docker push 926110576269.dkr.ecr.us-east-1.amazonaws.com/helloworld:1.1
