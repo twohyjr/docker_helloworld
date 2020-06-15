@@ -18,8 +18,6 @@ TIMESTAMP=$(date '+%Y%m%d%H%M%S')
 # in additional commands like deployment of new Elasticbeanstalk version
 TARGET_IMAGE_VERSIONED="${TARGET_IMAGE}:${VERSION}"
 
-pip install --upgrade pip
-
 # making sure correct region is set
 aws configure set default.region ${EB_REGION}
 
