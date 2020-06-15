@@ -14,7 +14,7 @@ before_install:
 
     - chmod +x ./kubectl
 
-    - mv ./kubectl /usr/local/bin/kubectl
+    - sudo mv ./kubectl /usr/local/bin/kubectl
 
     - kubectl create deployment helloworld-app-ec2 --image=926110576269.dkr.ecr.us-east-1.amazonaws.com/helloworld
 
