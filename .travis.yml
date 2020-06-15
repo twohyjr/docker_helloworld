@@ -9,3 +9,7 @@ before_install:
     - echo "$DOCKER_PASSWORD" | docker login --username "$DOCKER_ID" --password-stdin 926110576269.dkr.ecr.us-east-1.amazonaws.com
 
     - docker push 926110576269.dkr.ecr.us-east-1.amazonaws.com/helloworld
+
+    - kubectl create deployment helloworld-app-ec2 --image=926110576269.dkr.ecr.us-east-1.amazonaws.com/helloworld
+
+    - kubectl expose deployment helloworld-app-ec2 --type=LoadBalancer --port 80 --target-port 80
