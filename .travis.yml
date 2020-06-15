@@ -4,18 +4,8 @@ services:
     - docker
 
 before_install:
-    - docker build -t 926110576269.dkr.ecr.us-east-1.amazonaws.com/helloworld .
+    - docker build -t 926110576269.dkr.ecr.us-east-1.amazonaws.com/helloworld:latest .
 
     - echo "$DOCKER_PASSWORD" | docker login --username "$DOCKER_ID" --password-stdin 926110576269.dkr.ecr.us-east-1.amazonaws.com
 
-    - docker push 926110576269.dkr.ecr.us-east-1.amazonaws.com/helloworld
-
-    - curl -LO https://storage.googleapis.com/kubernetes-release/release/v1.18.0/bin/linux/amd64/kubectl
-
-    - chmod +x ./kubectl
-
-    - sudo mv ./kubectl /usr/local/bin/kubectl
-
-    - kubectl create deployment helloworld-app-ec2 --image=926110576269.dkr.ecr.us-east-1.amazonaws.com/helloworld
-
-    - kubectl expose deployment helloworld-app-ec2 --type=LoadBalancer --port 80 --target-port 80
+    - docker push 926110576269.dkr.ecr.us-east-1.amazonaws.com/helloworld:latest
