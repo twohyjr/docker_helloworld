@@ -7,9 +7,10 @@ env:
   - DOCKER_REPO=twohyjr/helloworld
   - EB_REGION="us-east-1"
 before_install:
-- pip install --upgrade pip
-- pip install awscli
-- export PATH=$PATH:$HOME/.local/bin
+  - pyenv global 3.7.1
+  - pip install -U pip
+  - pip install awscli
+  - export PATH=$PATH:$HOME/.local/bin
 script:
 - docker build -t $DOCKER_REPO .
 deploy:
