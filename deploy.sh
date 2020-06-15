@@ -24,7 +24,10 @@ aws configure set default.region ${EB_REGION}
 # Push image to ECR
 ###################
 
-echo "$DOCKER_PASSWORD" | docker login --username "$DOCKER_ID" --password-stdin 926110576269.dkr.ecr.us-east-1.amazonaws.com
+# I'm speculating it obtains temporary access token
+# it expects aws access key and secret set
+# in environmental vars
+aws ecr get-login-password | docker login --username AWS --password-stdin ${REGISTRY_URL}
 
 # update latest version
 docker tag ${SOURCE_IMAGE} ${TARGET_IMAGE_LATEST}
