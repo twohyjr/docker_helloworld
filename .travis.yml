@@ -4,8 +4,8 @@ services:
     - docker
 
 before_install:
-    - docker build -t 926110576269.dkr.ecr.us-east-1.amazonaws.com/helloworld:1.1 .
+    - docker build -t 926110576269.dkr.ecr.us-east-1.amazonaws.com/helloworld .
 
     - echo "$DOCKER_PASSWORD" | docker login --username "$DOCKER_ID" --password-stdin 926110576269.dkr.ecr.us-east-1.amazonaws.com
 
-    - docker push 926110576269.dkr.ecr.us-east-1.amazonaws.com/helloworld:1.1
+    - docker push 926110576269.dkr.ecr.us-east-1.amazonaws.com/helloworld
