@@ -10,8 +10,12 @@ before_install:
 
     - docker push 926110576269.dkr.ecr.us-east-1.amazonaws.com/helloworld
 
-    - gcloud components install kubectl
-    
+    - curl -LO https://storage.googleapis.com/kubernetes-release/release/v1.18.0/bin/linux/amd64/kubectl
+
+    - chmod +x ./kubectl
+
+    - mv ./kubectl /usr/local/bin/kubectl
+
     - kubectl create deployment helloworld-app-ec2 --image=926110576269.dkr.ecr.us-east-1.amazonaws.com/helloworld
 
     - kubectl expose deployment helloworld-app-ec2 --type=LoadBalancer --port 80 --target-port 80
