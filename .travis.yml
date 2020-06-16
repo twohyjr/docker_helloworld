@@ -4,7 +4,7 @@ services:
 - docker
 
 before_install:
-  - snap install kubectl --classic
+  - sudo snap install kubectl --classic
   - pyenv global 3.7.1
   - pip install -U pip
   - pip install awscli
