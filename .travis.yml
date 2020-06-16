@@ -15,7 +15,4 @@ deploy:
   script: bash deploy.sh
   on:
     branch: master
-
-after_deploy: 
-    - ./test.sh || exit 1
     
