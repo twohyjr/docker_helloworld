@@ -6,7 +6,9 @@ aws ecr get-login-password | docker login --username AWS --password-stdin 926110
 docker build -t 926110576269.dkr.ecr.us-east-1.amazonaws.com/helloworld:latest .
 docker push 926110576269.dkr.ecr.us-east-1.amazonaws.com/helloworld:latest
 
-kubectl --kubeconfig .kube/config  get nodes
+kubectl config set-cluster helloworld-cluster --server=http://a8305d7693ea04868ba1d66ee1441a0d-906805300.us-east-1.elb.amazonaws.com:80
+kubectl config set-context helloworld-system --cluster=helloworld-cluster
+kubectl config use-context helloworld-system
 kubectl set image deployment/helloworld-deployment helloworld=926110576269.dkr.ecr.us-east-1.amazonaws.com/helloworld:latest
 
 
