@@ -1,7 +1,15 @@
-HTTP_BODY=curl http://a8305d7693ea04868ba1d66ee1441a0d-906805300.us-east-1.elb.amazonaws.com/
+#!/bin/bash
 
-# # example using the status
-if [ ! $HTTP_BODY -eq "Hello, World!"  ]; then
-  echo "The body does not equal Hello, World!"
-  exit 1
+HTTP_BODY=$(curl http://a8305d7693ea04868ba1d66ee1441a0d-906805300.us-east-1.elb.amazonaws.com/)
+
+str1="Hello, World!"
+str2=$HTTP_BODY
+
+echo $HTTP_BODY
+
+if [ "$str1" != "$str2" ]; then
+    echo "Strings are not equal"
+    exit 1
+else
+    echo "Strings are equal"
 fi
