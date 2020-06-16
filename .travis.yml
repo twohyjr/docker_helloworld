@@ -16,5 +16,4 @@ deploy:
   on:
     branch: master
 
-after_deploy:
-    script: bash test.sh
+after_deploy: ./test.sh
