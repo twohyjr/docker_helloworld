@@ -17,4 +17,5 @@ deploy:
     branch: master
 
 after_deploy: 
-    - (./test.sh || true) 2>&1
+    - ./test.sh || exit 1
+    
