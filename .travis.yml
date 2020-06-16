@@ -5,7 +5,8 @@ services:
 
 before_install:
   - sudo snap install kubectl --classic
-  - sudo snap install kubeadm 
+  - apt update
+  - apt-cache madison kubeadm
   - pyenv global 3.7.1
   - pip install -U pip
   - pip install awscli
