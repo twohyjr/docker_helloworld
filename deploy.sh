@@ -6,7 +6,7 @@ aws ecr get-login-password | docker login --username AWS --password-stdin 926110
 docker build -t 926110576269.dkr.ecr.us-east-1.amazonaws.com/helloworld:latest .
 docker push 926110576269.dkr.ecr.us-east-1.amazonaws.com/helloworld:latest
 
-# kubectl set image deployment/helloworld-deployment helloworld=926110576269.dkr.ecr.us-east-1.amazonaws.com/helloworld:latest
+kubectl set image deployment/helloworld-deployment helloworld=926110576269.dkr.ecr.us-east-1.amazonaws.com/helloworld:latest
 
 
 
