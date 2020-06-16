@@ -2,17 +2,13 @@ sudo: required
 language: generic
 services:
 - docker
-env:
-  global:
-  - DOCKER_REPO=926110576269.dkr.ecr.us-east-1.amazonaws.com/helloworld
-  - EB_REGION="us-east-1"
+
 before_install:
   - pyenv global 3.7.1
   - pip install -U pip
   - pip install awscli
   - export PATH=$PATH:$HOME/.local/bin
-script:
-- docker build -t $DOCKER_REPO:latest .
+
 deploy:
   provider: script
   script: bash deploy.sh
