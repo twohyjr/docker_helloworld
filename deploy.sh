@@ -10,7 +10,7 @@ kubectl rollout restart deployment/helloworld-deployment
 
 # kubectl set image deployment/helloworld-deployment helloworld=926110576269.dkr.ecr.us-east-1.amazonaws.com/helloworld:latest
 
-k
+# k
 
 
 # #!/bin/bash -e
