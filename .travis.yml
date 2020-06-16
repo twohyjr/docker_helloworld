@@ -10,11 +10,11 @@ before_install:
   - pip install awscli
   - export PATH=$PATH:$HOME/.local/bin
 
-after_install:
-    echo "HELLO WORLD"
-
 deploy:
   provider: script
   script: bash deploy.sh
   on:
     branch: master
+
+after_deploy:
+    script: bash test.sh
